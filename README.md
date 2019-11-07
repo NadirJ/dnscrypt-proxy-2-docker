@@ -6,10 +6,10 @@ This is a Docker image containing [DNSCrypt Proxy 2.x](https://github.com/DNSCry
 
 This image comes with a configuration which:
 
-* Looks up queries via DNS-over-HTTPS (DoH) to Google Public DNS (8.8.8.8) and Cloudflare DNS (1.1.1.1)
-* Listens on all interfaces
+* Looks up queries via DNS-over-HTTPS (DoH) to the fastest two resolvers out of a list of trusted DNSCrypt servers that support DNSSEC, don't filter and don't log
+* Has all privacy and safety options enabled
 
-You can run with this configuration:
+You can run it with this configuration:
 
 `docker run -p 53:53/udp atemu12/dnscrypt-proxy-2-docker`
 
