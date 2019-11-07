@@ -1,8 +1,8 @@
 FROM golang:alpine as build
 ENV RELEASE_TAG 2.0.25
 RUN apk --no-cache add git && \
-    git clone https://github.com/jedisct1/dnscrypt-proxy /go/src/github.com/jedisct1/ && \
-    cd /go/src/github.com/jedisct1/dnscrypt-proxy && \
+    git clone https://github.com/DNSCrypt/dnscrypt-proxy /go/src/github.com/DNSCrypt/ && \
+    cd /go/src/github.com/DNSCrypt/dnscrypt-proxy && \
     git checkout tags/${RELEASE_TAG} && \
     CGO_ENABLED=0 GOOS=linux go install -a -ldflags '-s -w -extldflags "-static"' -v ./...
 
