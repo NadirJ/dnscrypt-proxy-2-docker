@@ -1,5 +1,5 @@
 FROM golang:alpine as build
-ENV RELEASE_TAG 2.0.25
+ENV RELEASE_TAG 2.0.31
 RUN apk --no-cache add git && \
     git clone https://github.com/DNSCrypt/dnscrypt-proxy /go/src/github.com/DNSCrypt/ && \
     cd /go/src/github.com/DNSCrypt/dnscrypt-proxy && \
