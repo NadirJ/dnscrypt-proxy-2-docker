@@ -32,7 +32,7 @@
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
 
-listen_addresses = ['127.0.0.1:53', '[::1]:53']
+listen_addresses = ['0.0.0.0:53']
 
 
 ## Maximum number of simultaneous client connections to accept
@@ -54,7 +54,7 @@ max_clients = 250
 ipv4_servers = true
 
 # Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
-ipv6_servers = false
+ipv6_servers = true
 
 # Use servers implementing the DNSCrypt protocol
 dnscrypt_servers = true
@@ -66,7 +66,7 @@ doh_servers = true
 ## Require servers defined by remote sources to satisfy specific properties
 
 # Server must support DNS security extensions (DNSSEC)
-require_dnssec = false
+require_dnssec = true
 
 # Server must not log user queries (declarative)
 require_nolog = true
@@ -118,17 +118,17 @@ keepalive = 30
 ## Using the `hinfo` option means that some responses will be lies.
 ## Unfortunately, the `hinfo` option appears to be required for Android 8+
 
-# blocked_query_response = 'refused'
+blocked_query_response = 'refused'
 
 
 ## Load-balancing strategy: 'p2' (default), 'ph', 'first' or 'random'
 
-# lb_strategy = 'p2'
+lb_strategy = 'p2'
 
 ## Set to `true` to constantly try to estimate the latency of all the resolvers
 ## and adjust the load-balancing parameters accordingly, or to `false` to disable.
 
-# lb_estimator = true
+lb_estimator = true
 
 
 ## Log level (0-6, default: 2 - 0 is very verbose, 6 only contains fatal errors)
@@ -155,12 +155,12 @@ cert_refresh_delay = 240
 ## This may improve privacy but can also have a significant impact on CPU usage
 ## Only enable if you don't have a lot of network load
 
-# dnscrypt_ephemeral_keys = false
+dnscrypt_ephemeral_keys = true
 
 
 ## DoH: Disable TLS session tickets - increases privacy but also latency
 
-# tls_disable_session_tickets = false
+tls_disable_session_tickets = true
 
 
 ## DoH: Use a specific cipher suite instead of the server preference
@@ -201,7 +201,7 @@ fallback_resolver = '9.9.9.9:53'
 ## Never let dnscrypt-proxy try to use the system DNS settings;
 ## unconditionally use the fallback resolver.
 
-ignore_system_dns = false
+ignore_system_dns = true
 
 
 ## Maximum time (in seconds) to wait for network connectivity before
