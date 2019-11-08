@@ -10,6 +10,7 @@ FROM alpine
 RUN apk --no-cache add ca-certificates
 COPY --from=build /go/bin/dnscrypt-proxy /usr/local/bin/dnscrypt-proxy
 ADD config /config
+RUN mkdir /blacklist/ ; touch /blacklist/blacklist.txt
 EXPOSE 53/udp
 
 CMD ["dnscrypt-proxy", "-config", "/config/dnscrypt-proxy.toml"]
