@@ -13,4 +13,4 @@ ADD dnscrypt-proxy.toml /config/
 RUN mkdir /blacklist/ ; touch /blacklist/blacklist.txt
 EXPOSE 53/udp
 
-CMD ["dnscrypt-proxy", "-config", "/config/dnscrypt-proxy.toml"]
+CMD dnscrypt-proxy -config /config/dnscrypt-proxy.toml
