@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  dnscrypt-proxy:
+    container_name: dnscrypt-proxy
+    image: atemu12/dnscrypt-proxy-2
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - './dnscrypt-proxy.toml:/config/dnscrypt-proxy.toml'
+
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
